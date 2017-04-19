@@ -21,13 +21,16 @@ classes, encapsulation, composition, inheritance, interface, static, abstract
 
 ```
 class Vehicle {
+    protected speed:number;
     constructor() {
         console.log("vroom!");
     );
 }
+/// <reference path="vehicle.ts"/>
 class Car extends Vehicle {
     constructor() {
         super();
+        this.speed = 4;
     }
 }
 ```
