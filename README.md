@@ -16,17 +16,24 @@ classes, encapsulation, composition, inheritance, interface, static, abstract
 - Laat de driver mee bewegen met de kart
 
 ### Update de driver
-De driver moet mee bewegen met de kart. Dit kan op meerdere manieren:
-- Gebruik de DOM: plaats de driver div BINNEN de kart div. Als de kart div verplaatst, verplaatst automatisch ook alle inhoud.
+Optie 1: Gebruik de DOM. Je plaatst de driver div BINNEN de kart div. Als de kart div verplaatst, verplaatst automatisch ook alle inhoud.
 ```
 <kart>
     <driver></driver>
 </kart>
 ```
-- De move functie van kart roept de move functie van de driver aan
+Je kan dit bereiken door de appendChild functie een parent mee te geven:
 ```
+let parent = document.body;
+let k = document.createElement("kart");
+parent.appendChild(k);
+```
+Optie 2: Vanuit kart roep je een move functie van de driver aan. De driver moet dan de positie van de kart ontvangen:
+```
+kart.ts
 public move(){
-    this.driver.move();
+    // kartx en karty bevatten de positie van de kart
+    this.driver.move(kartx, karty);
 }
 ```
 
