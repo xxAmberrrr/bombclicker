@@ -48,8 +48,10 @@ class Car implements Vehicle {
 
 ### Static
 
+Classes in Typescript zijn niet static. Properties en methods kunnen wel static zijn.
+
 ```
-public static class Calculator { 
+class Calculator { 
     public static add(a :number, b :number) : number { 
        return a + b;
     } 
