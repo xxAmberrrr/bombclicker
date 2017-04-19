@@ -10,6 +10,7 @@ var Driver = (function () {
 }());
 var Kart = (function () {
     function Kart() {
+        this.speed = 3;
         this.div = document.createElement("kart");
         document.body.appendChild(this.div);
         this.div.style.transform = "translate(200px,100px)";

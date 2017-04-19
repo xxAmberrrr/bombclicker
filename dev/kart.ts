@@ -1,8 +1,11 @@
 class Kart {
 
     private div:HTMLElement;
+    private speed:number;
             
     constructor() {
+        this.speed = 3;
+
         this.div = document.createElement("kart");
         document.body.appendChild(this.div);
 
