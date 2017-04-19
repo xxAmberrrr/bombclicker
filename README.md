@@ -13,7 +13,22 @@ classes, encapsulation, composition, inheritance, interface, static, abstract
 ## Opdracht 2
 - Voeg een game loop toe aan game.ts. Geef de kart een speed property. De game loop update de kart. 
 - Laat de kart van links naar rechts rijden.
-- Hoe wordt de driver geupdate?
+- Laat de driver mee bewegen met de kart
+
+### Update de driver
+De driver moet mee bewegen met de kart. Dit kan op meerdere manieren:
+- Gebruik de DOM: plaats de driver div BINNEN de kart div. Als de kart div verplaatst, verplaatst automatisch ook alle inhoud.
+```
+<kart>
+    <driver></driver>
+</kart>
+```
+- De move functie van kart roept de move functie van de driver aan
+```
+public move(){
+    this.driver.move();
+}
+```
 
 ## Voorbeeldcode
 
