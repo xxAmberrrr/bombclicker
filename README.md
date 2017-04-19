@@ -39,6 +39,7 @@ interface Vehicle {
     private fuel: number;
     public drive();
 }
+/// <reference path="vehicle.ts"/>
 class Car implements Vehicle {
     private fuel: number = 4;
     public drive(){
