@@ -34,11 +34,11 @@ class Car extends Vehicle {
 
 ```
 interface Vehicle {
-    private fuel: number;
-    public drive();
+    fuel: number;
+    drive();
 }
 class Car implements Vehicle {
-    private fuel: number = 4;
+    public fuel: number = 4;
     public drive(){
     }
 }
