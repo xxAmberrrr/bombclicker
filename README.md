@@ -106,6 +106,17 @@ public move(){
     this.driver.move(kartx, karty);
 }
 ```
+## Werken met GitHub
+
+### Fork
+- Als je een fork van deze repository maakt heb je meteen je eigen code online staan. 
+- Doe `git clone` van je eigen fork naar je lokale machine 
+- In Visual Studio Code kan je in het GIT venster `commit` en `sync` doen om je code weer online te plaatsen
+
+### Lokaal
+- Clone deze repository rechtstreeks in je werkfolder, of download de ZIP file. 
+- Je kan de git folder daarna weg gooien omdat je niet meer terug kan pushen naar deze repository. Open de Visual Studio Code Terminal en typ: `rm -rf .git`
+
 
 ## Links
 - [Instellen werkomgeving](https://github.com/HR-CMGT/PRG04-Week0)
