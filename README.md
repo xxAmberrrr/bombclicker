@@ -1,124 +1,64 @@
-# PRG08-Week1-oefening1
+# Bomb Clicker
 
-## Herhaling OOP concepten
-classes, encapsulation, composition, inheritance, interface, static, abstract
+Game basics met DOM elementen en de Game Loop.
 
-## Opdracht 1
-- Maak een **abstract gameobject** class waar **kart** en **driver** van overerven
-- Het gameobject krijgt via de constructor de juiste afbeelding
-- Het gameobject plaatst een div in de body
-- Maak de **message** class **static** en corrigeer alle aanroepen
-- De kart **heeft** een driver
+## OPDRACHT
 
-## Voorbeeldcode opdracht 1
+- Compileer en run de game
+- Maak een gameloop met requestAnimationFrame
+- Laat de auto naar rechts bewegen met de gameloop
+- Laat het bommetje naar beneden bewegen met de gameloop
 
-### Inheritance
-
+Voorbeeldcode : positie aanpassen
 ```
-class Vehicle {
-    protected speed:number;
-    constructor() {
-        console.log("vroom!");
-    );
-}
-/// <reference path="vehicle.ts"/>
-class Car extends Vehicle {
-    constructor() {
-        super();
-        this.speed = 4;
-    }
-}
+this.div.style.transform=`translate(10px, 30px)`
 ```
 
-### Interface
+## OPDRACHT
 
+- Als de auto rechts uit beeld gaat, verschijnt deze weer links
+- Als de bom onder uit beeld gaat, verschijnt deze weer boven
+- Maak de start x positie van de bom random!
+- Maak de start x positie van de auto ook random, zodat het even duurt voordat hij weer in beeld verschijnt.
+
+**Code voorbeeld**
 ```
-interface Vehicle {
-    fuel: number;
-    drive();
-}
-class Car implements Vehicle {
-    public fuel: number = 4;
-    public drive(){
-    }
-}
-```
-
-### Static
-
-Classes in Typescript zijn niet static. Properties en methods kunnen wel static zijn.
-
-```
-class Calculator { 
-    public static add(a :number, b :number) : number { 
-       return a + b;
-    } 
-} 
-let n : number = Calculator.add(3,4);
+let w = window.innerWidth   
+let h = window.innerHeight 
 ```
 
+## OPDRACHT
 
+- Start de game met 4 (of meer) bommetjes. plaats deze in een array in game.ts
+- Geef de bommetjes een random start x positie en een random snelheid
+- Maak de bommetjes aanklikbaar. De code hiervoor zet je in bomb.ts
+- Als je op een bommetje klikt dan zet je de y positie op -500 (of een random negatieve waarde), hoe kleiner het getal, hoe langer het duurt voor de bom weer in beeld verschijnt.
 
-## Opdracht 2
-- Voeg een game loop toe aan game.ts. Geef de kart een speed property. De game loop update de kart. 
-- Laat de kart van links naar rechts rijden.
-- Laat de driver mee bewegen met de kart
+## OPDRACHT
 
-## Voorbeeldcode opdracht 2
+- In game.ts wordt een score bijgehouden en het aantal kapotte gebouwen
+- Bedenk hoe je vanuit bomb de functies in game kan aanroepen
+- Als een bom wordt aangeklikt, tel dan 1 op bij de score. Update het scoreveld.
 
-### Game Loop
+## OPDRACHT
 
+- Als een bom onder uit beeld valt, tel dan 1 op bij het aantal kapotte gebouwen
+- Als er vier kapotte gebouwen zijn, stop dan de gameloop
+- Als je de auto aanklikt resetten je kapotte gebouwen weer. De auto moet niet te vaak in beeld zijn.
+
+**Code voorbeeld**
+
+Door de achtergrondafbeelding van de scorebalk naar links te verschuiven, kan je laten zien hoeveel gebouwen er kapot zijn
 ```
-class Game {
-
-    private fish:Fish;
-
-    constructor() {
-        this.fish = new Fish();     
-        requestAnimationFrame(() => this.gameLoop());
-    }
-
-    gameLoop(){
-        this.fish.move();
-        requestAnimationFrame(() => this.gameLoop());
-    }
-}
+this.bar.style.backgroundPositionX = "-72px"      // één kapot gebouw
 ```
-### Child elements
 
-Optie 1: Gebruik de DOM. Je plaatst de driver div BINNEN de kart div. Als de kart div verplaatst, verplaatst automatisch ook alle inhoud.
-```
-<kart>
-    <driver></driver>
-</kart>
-```
-Je kan dit bereiken door de appendChild functie een parent mee te geven:
-```
-let parent = document.body;
-let k = document.createElement("kart");
-parent.appendChild(k);
-```
-Optie 2: Vanuit kart roep je een move functie van de driver aan. De driver moet dan de positie van de kart ontvangen:
-```
-kart.ts
-public move(){
-    // kartx en karty bevatten de positie van de kart
-    this.driver.move(kartx, karty);
-}
-```
-## Werken met GitHub
+## OPDRACHT
 
-### Fork
-- Als je een fork van deze repository maakt heb je meteen je eigen code online staan. 
-- Doe `git clone` van je eigen fork naar je lokale machine 
-- In Visual Studio Code kan je in het GIT venster `commit` en `sync` doen om je code weer online te plaatsen
+- Plaats de docs map van de game online, bv. op github pages
+- Voeg "touchstart" event listeners toe voor touchscreens
+- Test de game op je telefoon
 
-### Lokaal
-- Clone deze repository rechtstreeks in je werkfolder, of download de ZIP file. 
-- Je kan de git folder daarna weg gooien omdat je niet meer terug kan pushen naar deze repository. Open de Visual Studio Code Terminal en typ: `rm -rf .git`
+## OPDRACHT
 
-
-## Links
-- [Instellen werkomgeving](https://github.com/HR-CMGT/PRG04-Week0)
-- [Typescript Classes](https://www.typescriptlang.org/docs/handbook/classes.html)
-- [Game Loop](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+- Pas inheritance toe op de car en de bomb
