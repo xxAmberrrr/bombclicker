@@ -14,7 +14,6 @@ class Game {
         this.gameLoop()
     }
     
-    // timer voor bommetjes
     private gameLoop():void{
         console.log("updating the game")
         requestAnimationFrame(() => this.gameLoop())
@@ -32,6 +31,4 @@ class Game {
 
 } 
 
-window.addEventListener("load", () => {
-    new Game();
-});
+window.addEventListener("load", () => new Game())

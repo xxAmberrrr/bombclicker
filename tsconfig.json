@@ -3,8 +3,10 @@
         "strict": true,
         "target": "es5",
         "removeComments": true,
-        "noUnusedLocals":true,
-        "noUnusedParameters":true,
+        "noUnusedLocals": true,
+        "strictPropertyInitialization": false,
+        "noImplicitAny": true,
+        "noUnusedParameters": true,
         "sourceMap": true,
         "outFile": "docs/js/main.js"
     },
