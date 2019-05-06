@@ -62,3 +62,7 @@ this.bar.style.backgroundPositionX = "-72px"      // één kapot gebouw
 ## OPDRACHT
 
 - Pas inheritance toe op de car en de bomb
+
+## Page
+
+- https://xxamberrrr.github.io/bombclicker/
