@@ -57,7 +57,7 @@ var Car = (function (_super) {
     function Car(g) {
         var _this = _super.call(this, g, "car") || this;
         _this.posx = 0;
-        _this.posy = 700;
+        _this.posy = _this.h - 175;
         return _this;
     }
     Car.prototype.checkWindowColRight = function () {

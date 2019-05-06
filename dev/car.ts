@@ -5,7 +5,7 @@ class Car extends DomObject {
         super(g, "car")
         
         this.posx = 0
-        this.posy = 700
+        this.posy = this.h - 175
     }
 
     public checkWindowColRight() {
