@@ -28,6 +28,7 @@ var Bomb = (function (_super) {
     function Bomb(g) {
         var _this = _super.call(this, g, "bomb") || this;
         _this.element.addEventListener("click", function (e) { return _this.removeBomb(e); });
+        _this.element.addEventListener("touchstart", function (e) { return _this.removeBomb(e); });
         _this.posy = 0;
         _this.posx = Math.floor(Math.random() * _this.w);
         return _this;
@@ -82,6 +83,7 @@ var Game = (function () {
         this.bombs.push(new Bomb(this), new Bomb(this), new Bomb(this), new Bomb(this));
         this.car = new Car(this);
         this.car.element.addEventListener("click", function (e) { return _this.resetGame(e); });
+        this.car.element.addEventListener("touchstart", function (e) { return _this.resetGame(e); });
         this.gameLoop();
     }
     Game.prototype.resetGame = function (e) {

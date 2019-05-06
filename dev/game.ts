@@ -16,6 +16,7 @@ class Game {
 
         this.car = new Car(this)
         this.car.element.addEventListener("click", (e:Event) => this.resetGame(e))
+        this.car.element.addEventListener("touchstart", (e:Event) => this.resetGame(e))
         this.gameLoop()
     }
 

@@ -5,6 +5,7 @@
         super(g, "bomb")
 
         this.element.addEventListener("click", (e:Event) => this.removeBomb(e))
+        this.element.addEventListener("touchstart", (e:Event) => this.removeBomb(e))
         
         this.posy = 0
         this.posx = Math.floor(Math.random() * this.w)
